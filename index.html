@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 29 — CSS Display: block, inline, inline-block</title>
+  <meta name="description" content="Interactive visual demos showing differences between display: block, inline and inline-block." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1 class="site-title">Day 29 — <span class="muted">CSS Display</span></h1>
+      <p class="lead">Visual examples of <code>display: block</code>, <code>display: inline</code> and <code>display: inline-block</code>.</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="card intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Quick reference</h2>
+      <ul class="quick-list">
+        <li><strong>block</strong> — starts on a new line and stretches to the container width by default.</li>
+        <li><strong>inline</strong> — flows inside a line of text; width and height properties are ignored.</li>
+        <li><strong>inline-block</strong> — flows inline but accepts width and height like a block-level element.</li>
+      </ul>
+      <p class="note">Resize the browser to observe responsive behaviour. Use devtools to toggle <code>display</code> values live.</p>
+    </section>
+
+    <section class="demos" aria-label="Display demos">
+      <!-- Block demo -->
+      <article class="card demo-block" aria-labelledby="block-heading">
+        <h3 id="block-heading">Block elements</h3>
+        <p class="example-note">Block elements begin on a new line and take up full available width (unless constrained).</p>
+
+        <div class="demo-area" role="group" aria-label="Block demo">
+          <div class="box block">Block A (display: block)</div>
+          <div class="box block">Block B (display: block)</div>
+          <div class="box block">Block C (display: block)</div>
+        </div>
+
+        <details class="code-details">
+          <summary>HTML used</summary>
+          <pre><code>&lt;div class="box block"&gt;Block A (display: block)&lt;/div&gt;</code></pre>
+        </details>
+      </article>
+
+      <!-- Inline demo -->
+      <article class="card demo-inline" aria-labelledby="inline-heading">
+        <h3 id="inline-heading">Inline elements</h3>
+        <p class="example-note">Inline elements sit alongside text and each other. Width/height are ignored for true inline elements.</p>
+
+        <div class="demo-area inline-flow" role="group" aria-label="Inline demo">
+          <span class="box inline" role="img" aria-label="Inline example 1">Inline 1</span>
+          <span class="box inline" role="img" aria-label="Inline example 2">Inline 2</span>
+          <span class="box inline" role="img" aria-label="Inline example 3">Inline 3</span>
+
+          <p class="inline-text">
+            This paragraph demonstrates how inline elements flow within text. Inline elements remain in the text flow and don't take explicit width or height.
+          </p>
+        </div>
+
+        <details class="code-details">
+          <summary>HTML used</summary>
+          <pre><code>&lt;span class="box inline"&gt;Inline 1&lt;/span&gt;</code></pre>
+        </details>
+      </article>
+
+      <!-- Inline-block demo -->
+      <article class="card demo-inlineblock" aria-labelledby="inlineblock-heading">
+        <h3 id="inlineblock-heading">Inline-block elements</h3>
+        <p class="example-note">Inline-block elements behave like inline items but accept width and height — useful for aligned, sized components.</p>
+
+        <div class="demo-area inline-block-flow" role="group" aria-label="Inline-block demo">
+          <div class="box inline-block" role="img" aria-label="Inline-block example 1">Box 1</div>
+          <div class="box inline-block" role="img" aria-label="Inline-block example 2">Box 2</div>
+          <div class="box inline-block" role="img" aria-label="Inline-block example 3">Box 3</div>
+        </div>
+
+        <details class="code-details">
+          <summary>HTML used</summary>
+          <pre><code>&lt;div class="box inline-block"&gt;Box 1&lt;/div&gt;</code></pre>
+        </details>
+      </article>
+    </section>
+
+    <section class="card notes" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Notes & best practices</h2>
+      <ol>
+        <li>Prefer semantic markup (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>) for clarity and screen-reader friendliness.</li>
+        <li>For horizontal alignment with flexible content, consider <code>inline-block</code>, Flexbox, or CSS Grid instead of forcing display changes on non-semantic elements.</li>
+        <li>Test how margins and padding interact with different display values across viewports.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Day 29 • Practice: <em>CSS Display</em>. Created for study and revision.</p>
+      <p class="micro">Tip: open developer tools and experiment by changing <code>display</code> values.</p>
+    </div>
+  </footer>
+</body>
+</html>
